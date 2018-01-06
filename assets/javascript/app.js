@@ -1,35 +1,56 @@
-$(".timer").hide();
-$(".question").hide();
-
 $(document).ready(function() {
-//----------------------
-//ESTABLISH TRIVIA TIMER
-//----------------------
-var timer = 60;
-var intervalId;
 
-$("#start").on("click", run);
+var number = 30; //declare timer value
+$("#start").on("click", start); // start a new game
+$("#submit").on("click", finish); // finish game
+$("#restart").on("click", restart); // restart game
 
-$("#start").click(function(){
-    $(".timer").show();
-});
+//  -------------------
+//  ESTABLISH FUNCTIONS
+//  -------------------
 
-function run() {
-    intervalId = setInterval(decrement, 1000);
-}
-function decrement() {
-    timer--
-    $("#show-timer").html("<h2>" + timer + "</h2>");
-    if (timer === 0) {
-        stop();
-        alert("Time is up!");
+    function start() {
+        counter = setInterval(timer, 1000);
+        showIt(".question");
+        showIt("#submit");
+        hideIt("#start");
+        hideIt("#restart");
     }
-}
-function stop() {
-    clearInterval(intervalId);
-}
-
-
+    function timer() {
+        number-- // decrements timer by 1
+        $("#show-timer").html("<h2>" + number + "</h2>");
+        if (number === 0) {
+            alert("Time is up!")
+            stop(); //calls stop function
+        }
+    }
+    function stop() {
+        clearInterval(counter); //stopping the timer
+        $("#restart").show();
+        $(".answers").show();
+        $(".question").hide();
+        $("#submit").hide();
+    }
+    function finish () {
+        timer = 1;
+        clearInterval(counter); //stops timer
+        hideIt("#show-timer");
+        hideIt("#submit");
+        hideIt(".question");
+        showIt(".answers");
+        showIt("#restart");
+        alert("Check your answers!");
+        timer();
+    }
+    function restart() {
+        start();
+    }
+    function hideIt(i) {
+        $(i).hide();
+    }
+    function showIt(i) {
+        $(i).show();
+    }
 });
 
 

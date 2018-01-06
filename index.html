@@ -5,78 +5,95 @@
         <title>Apple Trivia Game</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     </head>
 
     <body>
         <div class="container">
             <div class="jumbotron">
                 <h1 class="text-center">The Apple Trivia Game</h1>
-                <h3 class="text-center"></h3>
                 <br>
                 <p class="text-center"> 
                     <a class="btn btn-primary btn-lg" id="start"> Start </a>
+                    <a class="btn btn-primary btn-lg" id="restart"> Restart </a>
                 </p>
+                <br>
+                <h3 class="text-center" id="show-timer"></h3>
             </div>
-        </div>
-
-        <div class="row hidden timer">
-            <div class="col-md-2 col-md-offset-5">
-                <div class="panel panel-default">
-                    <div class="text-center">
-                        <div class="panel-heading">Timer</div>
-                        <div class="panel-body" id="show-timer"></div>
+            <div class="row question">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Question #1: In what year was the iMac released?</div>
+                        <div class="panel-body">
+                            <input type="radio" name="q1" value="a" id="q1a"><label for="q1a"> 1984</label><br/>
+                            <input type="radio" name="q1" value="b" id="q1b"><label for="q1b"> 1998</label><br/>
+                            <input type="radio" name="q1" value="c" id="q1c"><label for="q1c"> 2006</label><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row question">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Question #2: The Macbook Air was boasted to be able to fit inside what?</div>
+                        <div class="panel-body">
+                            <input type="radio" name="q2" value="a" id="q2a"><label for="q2a"> Backpack</label><br/>
+                            <input type="radio" name="q2" value="b" id="q2b"><label for="q2b"> Manilla Envelope</label><br/>
+                            <input type="radio" name="q2" value="c" id="q2c"><label for="q2c"> Pocket</label><br/>
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+            <div class="row question">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Question #3: Who is Apple's current CEO?</div>
+                        <div class="panel-body">
+                            <input type="radio" name="q3" value="a" id="q3a"><label for="q3a"> Tim Cook</label><br/>
+                            <input type="radio" name="q3" value="b" id="q3b"><label for="q3b"> Steve Jobs</label><br/>
+                            <input type="radio" name="q3" value="c" id="q3c"><label for="q3c"> Steve Wozniak</label><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row submit">
+                <div class="col-md-2 col-md-offset-5">
+                    <p class="text-center"> 
+                        <a class="btn btn-danger btn-lg" id="submit"> Submit </a>
+                    </p>
+                </div>
+            </div>
+            <div class="row answers">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Question #1 Correct Answer</div>
+                        <div class="panel-body">
+                            <p> 1998</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row answers">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Question #2 Correct Answer</div>
+                            <div class="panel-body">
+                            <p> Manilla Envelope</p>
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+            <div class="row answers">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Question #3 Correct Answer</div>
+                            <div class="panel-body">
+                            <p>Tim Cook</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row hidden">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Question #1: In what year was the iMac released?</div>
-                    <div class="panel-body">
-                        <label class="radio-inline"><input type="radio" name="optradio"> 1984 </label>
-                        <label class="radio-inline"><input type="radio" name="optradio"> 1998 </label>
-                        <label class="radio-inline"><input type="radio" name="optradio"> 2007 </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row hidden">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Question #2: The Macbook Air was boasted to be able to fit inside what?</div>
-                    <div class="panel-body">
-                        <label class="radio-inline"><input type="radio" name="optradio"> Backpack </label>
-                        <label class="radio-inline"><input type="radio" name="optradio"> Manilla Envelope </label>
-                        <label class="radio-inline"><input type="radio" name="optradio"> Pocket </label>
-                    </div>                   
-                </div>
-            </div>
-        </div>
-        <div class="row hidden">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                     <div class="panel-heading">Question #3: Who is Apple's current CEO?</div>
-                    <div class="panel-body">
-                        <label class="radio-inline"><input type="radio" name="optradio"> Tim Cook </label>
-                        <label class="radio-inline"><input type="radio" name="optradio"> Steve Jobs </label>
-                        <label class="radio-inline"><input type="radio" name="optradio"> Steve Wozniak </label>
-                    </div>
-                </div>
-             </div>
-        </div>
-        <div class="row hidden">
-            <div class="col-md-2 col-md-offset-5">
-                <p class="text-center"> 
-                    <a class="btn btn-danger btn-lg" id="submit"> Submit </a>
-                </p>
-            </div>
-        </div>
-
-
-
-
 
     <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

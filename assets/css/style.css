@@ -1,3 +1,20 @@
-.hidden {
-    display: none;
+#submit, #results, #restart, .timer, .question, .answers{
+        display: none;  
     }
+
+body {
+    background-image: url("../images/keynote.png");
+    font-family: 'Raleway', sans-serif;
+}
+
+.jumbotron {
+    background: rgba(125, 129, 131, .85); 
+ }
+
+ .panel {
+    background: rgba(125, 129, 131, .85); 
+ }
+
+ .container {
+     color: white;
+ }
